@@ -91,7 +91,7 @@ a:hover{text-decoration-thickness:.14em}
   }
   .avatar{width:260px; height:260px}
 }
-.tagline{margin:10px 0 0; color:var(--muted); max-width:70ch}
+.tagline{margin:10px 0 0; color:var(--muted); max-width:none; width:100%}
 
 main{margin-top:10px}
 section{padding:18px 0 10px; scroll-margin-top: 16px}
