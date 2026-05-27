@@ -43,19 +43,10 @@ a:hover{text-decoration-thickness:.14em}
 
 .site-header{margin-bottom:22px}
 .header-grid{
-  display:grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto;
-  grid-template-areas:
-    "name name"
-    "main photo";
-  column-gap: 18px;
-  row-gap: 14px;
+  display:flex;
+  flex-direction:column;
 }
-.header-main{grid-area: main; min-width:0}
-.avatar{grid-area: photo}
 .name{
-  grid-area: name;
   font-size: 34px;
   line-height:1.15;
   margin:0;
@@ -63,11 +54,13 @@ a:hover{text-decoration-thickness:.14em}
   border-bottom: 2px solid var(--line);
 }
 .avatar{
-  width: 320px;
-  height: 320px;
+  width: 360px;
+  height: 360px;
   border-radius: 0;
   border: 1px solid var(--line);
   object-fit: cover;
+  display:block;
+  margin: 18px auto 0;
 }
 .topnav{
   margin: 10px 0 0;
@@ -90,17 +83,13 @@ a:hover{text-decoration-thickness:.14em}
 .topnav a:hover{text-decoration:underline}
 
 /* More space between nav and about text in header */
-.topnav + .tagline{margin-top: 26px}
+.topnav + .avatar + .tagline{margin-top: 26px}
 @media (max-width: 560px){
   .header-grid{
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-      "name"
-      "photo"
-      "main";
+    display:flex;
+    flex-direction:column;
   }
-  .avatar{width:220px; height:220px}
+  .avatar{width:260px; height:260px}
 }
 .tagline{margin:10px 0 0; color:var(--muted); max-width:70ch}
 
