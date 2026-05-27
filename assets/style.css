@@ -41,7 +41,7 @@ a:hover{text-decoration-thickness:.14em}
 
 .wrap{max-width:var(--max); margin:0 auto; padding:22px 16px 56px}
 
-.site-header{margin-bottom:22px}
+.site-header{margin-bottom:36px}
 .header-grid{
   display:flex;
   flex-direction:column;
@@ -60,7 +60,7 @@ a:hover{text-decoration-thickness:.14em}
   border: 1px solid var(--line);
   object-fit: cover;
   display:block;
-  margin: 18px auto 0;
+  margin: 30px auto 0;
 }
 .topnav{
   margin: 10px 0 0;
@@ -83,7 +83,7 @@ a:hover{text-decoration-thickness:.14em}
 .topnav a:hover{text-decoration:underline}
 
 /* More space between nav and about text in header */
-.topnav + .avatar + .tagline{margin-top: 26px}
+.topnav + .avatar + .tagline{margin-top: 38px}
 @media (max-width: 560px){
   .header-grid{
     display:flex;
@@ -92,6 +92,7 @@ a:hover{text-decoration-thickness:.14em}
   .avatar{width:260px; height:260px}
 }
 .tagline{margin:10px 0 0; color:var(--muted); max-width:none; width:100%}
+header .tagline{margin-bottom: 18px}
 
 main{margin-top:10px}
 section{padding:18px 0 10px; scroll-margin-top: 16px}
@@ -174,6 +175,14 @@ main li,
 .coauthors{font-style: italic}
 
 .teach{margin-top:2px}
+.inst{
+  margin:14px 0;
+  padding:12px 12px;
+  border:1px solid var(--line);
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--bg) 92%, transparent);
+}
+.inst h3{margin-top:0}
 .teach-list{list-style: disc; padding-left:18px; margin:0}
 .teach-item{
   margin:12px 0;
