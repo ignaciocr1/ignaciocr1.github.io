@@ -6,7 +6,9 @@
   --line: rgba(11, 18, 32, .16);
   --link: #0b3aa4;
   --talks: #0f5132;
-  --submitted: #7f1d1d;
+  --submitted: #14532d;
+  --soon: #92400e;
+  --wip: #7f1d1d;
   --nav: #0f5132;
   --h2: #0f5132;
   --h3: #2f7a57;
@@ -21,7 +23,9 @@
     --line: rgba(230, 237, 247, .14);
     --link: #8ab4ff;
     --talks: #5bbd87;
-    --submitted: #fca5a5;
+    --submitted: #86efac;
+    --soon: #fdba74;
+    --wip: #fca5a5;
     --nav: #5bbd87;
     --h2: #5bbd87;
     --h3: #86efac;
@@ -142,14 +146,17 @@ main li,
 .pub .title a:hover{text-decoration: underline}
 .pub .title a{color: inherit}
 .badge{
+  --badge-color: var(--submitted);
   font-size: 12.5px;
-  color: var(--submitted);
-  border: 1px solid var(--submitted);
+  color: var(--badge-color);
+  border: 1px solid var(--badge-color);
   border-radius: 999px;
   padding: 3px 8px;
   white-space: nowrap;
   margin-top: 1px;
 }
+.badge--soon{--badge-color: var(--soon)}
+.badge--wip{--badge-color: var(--wip)}
 .pub .meta{color:var(--muted)}
 .pub-head + .meta{margin-top: 2px}
 .pub .meta + .meta{margin-top: 8px}
