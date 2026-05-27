@@ -1,0 +1,195 @@
+:root{
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --fg: #0b1220;
+  --muted: #4b5563;
+  --line: rgba(11, 18, 32, .16);
+  --link: #0b3aa4;
+  --talks: #0f5132;
+  --submitted: #7f1d1d;
+  --nav: #0f5132;
+  --h2: #0f5132;
+  --h3: #2f7a57;
+  --max: 900px;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg: #0b1220;
+    --fg: #e6edf7;
+    --muted: #a8b3c7;
+    --line: rgba(230, 237, 247, .14);
+    --link: #8ab4ff;
+    --talks: #5bbd87;
+    --submitted: #fca5a5;
+    --nav: #5bbd87;
+    --h2: #5bbd87;
+    --h3: #86efac;
+  }
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font: 15px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+a{color:var(--link); text-underline-offset:.18em}
+a:hover{text-decoration-thickness:.14em}
+
+.wrap{max-width:var(--max); margin:0 auto; padding:22px 16px 56px}
+
+.site-header{margin-bottom:22px}
+.header-grid{
+  display:grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "name name"
+    "main photo";
+  column-gap: 18px;
+  row-gap: 14px;
+}
+.header-main{grid-area: main; min-width:0}
+.avatar{grid-area: photo}
+.name{
+  grid-area: name;
+  font-size: 34px;
+  line-height:1.15;
+  margin:0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--line);
+}
+.avatar{
+  width: 320px;
+  height: 320px;
+  border-radius: 0;
+  border: 1px solid var(--line);
+  object-fit: cover;
+}
+.topnav{
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: var(--nav);
+}
+.topnav a{padding: 2px 2px}
+.topnav a{
+  white-space:nowrap;
+  text-decoration:none;
+  color: inherit;
+}
+.topnav a + a{
+  margin-left: 0;
+}
+.topnav a + a::before{
+  content: "  •  ";
+  color: var(--muted);
+}
+.topnav a:hover{text-decoration:underline}
+
+/* More space between nav and about text in header */
+.topnav + .tagline{margin-top: 26px}
+@media (max-width: 560px){
+  .header-grid{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "name"
+      "photo"
+      "main";
+  }
+  .avatar{width:220px; height:220px}
+}
+.tagline{margin:10px 0 0; color:var(--muted); max-width:70ch}
+
+main{margin-top:10px}
+section{padding:18px 0 10px; scroll-margin-top: 16px}
+h2{
+  font-size: 20px;
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--line);
+  color: var(--h2);
+}
+h3{font-size:16px; margin:16px 0 8px; font-weight:650; color: var(--h3)}
+p{margin:0 0 10px}
+p:last-child{margin-bottom:0}
+
+ul{margin:0; padding-left:18px}
+li{margin:6px 0}
+
+/* Justified text (content only) */
+main p,
+main li,
+.tagline,
+.pub .meta,
+.details .abstract,
+.details .talks{
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
+
+.pub{
+  margin:14px 0;
+  padding:12px 12px;
+  border:1px solid var(--line);
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--bg) 92%, transparent);
+}
+.pub-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom: 10px;
+}
+.pub .title{font-weight:680; color: var(--link)}
+.pub .title a{text-decoration: none}
+.pub .title a:hover{text-decoration: underline}
+.pub .title a{color: inherit}
+.badge{
+  font-size: 12.5px;
+  color: var(--submitted);
+  border: 1px solid var(--submitted);
+  border-radius: 999px;
+  padding: 3px 8px;
+  white-space: nowrap;
+  margin-top: 1px;
+}
+.pub .meta{color:var(--muted)}
+.pub-head + .meta{margin-top: 2px}
+.pub .meta + .meta{margin-top: 8px}
+.pub .links{margin-top:12px; font-size:13.5px}
+.pub .links a{
+  margin-right:10px;
+  display:inline-block;
+  padding: 3px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  text-decoration: none;
+}
+.pub .links a:hover{background: color-mix(in oklab, var(--bg) 84%, transparent)}
+.details{margin-top:10px}
+.details summary{cursor:pointer; color: var(--muted)}
+.details[open] summary{margin-bottom: 14px}
+.details .abstract{font-style: italic; color: var(--fg)}
+.details .talks{
+  color: var(--talks);
+  font-size: 13.5px;
+  margin-top: 14px;
+}
+.coauthors{font-style: italic}
+
+.teach{margin-top:2px}
+.teach-list{list-style: disc; padding-left:18px; margin:0}
+.teach-item{
+  margin:12px 0;
+}
+.teach-course{font-weight:650}
+.teach-meta{color:var(--muted); font-size: 13.5px; margin-top: 2px}
+
+footer{border-top:1px solid var(--line); margin-top:22px; padding-top:14px; color:var(--muted); font-size:14
