@@ -13,6 +13,7 @@
   --h2: #0f5132;
   --h3: #2f7a57;
   --max: 900px;
+  --serif: "EB Garamond", Garamond, Baskerville, Georgia, serif;
 }
 
 @media (prefers-color-scheme: dark){
@@ -33,11 +34,14 @@
 }
 
 *{box-sizing:border-box}
+html, body, h1, h2, h3, p, li, a, summary, div, span, nav, section, header, footer{
+  font-family: var(--serif);
+}
 body{
   margin:0;
   background:var(--bg);
   color:var(--fg);
-  font: 15px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font: 17px/1.72 var(--serif);
 }
 
 a{color:var(--link); text-underline-offset:.18em}
@@ -52,6 +56,7 @@ a:hover{text-decoration-thickness:.14em}
 }
 .name{
   font-size: 34px;
+  font-weight: 600;
   line-height:1.15;
   margin:0;
   padding-bottom: 10px;
@@ -68,7 +73,7 @@ a:hover{text-decoration-thickness:.14em}
 }
 .topnav{
   margin: 10px 0 0;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--nav);
 }
 .topnav a{padding: 2px 2px}
@@ -101,13 +106,14 @@ header .tagline{margin-bottom: 18px}
 main{margin-top:10px}
 section{padding:18px 0 10px; scroll-margin-top: 16px}
 h2{
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: 600;
   margin: 0 0 10px;
   padding-bottom: 6px;
   border-bottom: 2px solid var(--line);
   color: var(--h2);
 }
-h3{font-size:16px; margin:16px 0 8px; font-weight:650; color: var(--h3)}
+h3{font-size:18px; margin:16px 0 8px; font-weight:600; color: var(--h3)}
 p{margin:0 0 10px}
 p:last-child{margin-bottom:0}
 
