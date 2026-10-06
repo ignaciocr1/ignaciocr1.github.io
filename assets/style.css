@@ -184,7 +184,7 @@ main li,
 .details{margin-top:10px}
 .details summary{cursor:pointer; color: var(--muted)}
 .details[open] summary{margin-bottom: 14px}
-.details .abstract{font-style: normal; color: var(--fg)}
+.details .abstract{font-style: normal !important; color: var(--fg)}
 .details .talks{
   color: var(--muted);
   font-size: 13.5px;
