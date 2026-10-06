@@ -5,7 +5,7 @@
   --muted: #4b5563;
   --line: rgba(11, 18, 32, .16);
   --link: #0b3aa4;
-  --talks: #0f5132;
+  --talks-label: #7f1d1d;
   --submitted: #14532d;
   --soon: #92400e;
   --wip: #7f1d1d;
@@ -23,7 +23,7 @@
     --muted: #a8b3c7;
     --line: rgba(230, 237, 247, .14);
     --link: #8ab4ff;
-    --talks: #5bbd87;
+    --talks-label: #fca5a5;
     --submitted: #86efac;
     --soon: #fdba74;
     --wip: #fca5a5;
@@ -163,6 +163,11 @@ main li,
 }
 .badge--soon{--badge-color: var(--soon)}
 .badge--wip{--badge-color: var(--wip)}
+.thesis-note{
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 13.5px;
+}
 .pub .meta{color:var(--muted)}
 .pub-head + .meta{margin-top: 2px}
 .pub .meta + .meta{margin-top: 8px}
@@ -181,9 +186,13 @@ main li,
 .details[open] summary{margin-bottom: 14px}
 .details .abstract{font-style: italic; color: var(--fg)}
 .details .talks{
-  color: var(--talks);
+  color: var(--muted);
   font-size: 13.5px;
   margin-top: 14px;
+}
+.details .talks-label{
+  color: var(--talks-label);
+  font-weight: 700;
 }
 .coauthors{font-style: italic}
 
