@@ -194,7 +194,7 @@ main li,
   color: var(--talks-label);
   font-weight: 700;
 }
-.coauthors{font-style: italic}
+.coauthors{font-style: normal}
 
 .teach{margin-top:2px}
 .inst{
