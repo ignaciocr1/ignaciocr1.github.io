@@ -17,7 +17,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
     />
-    <link rel="stylesheet" href="assets/style.css?v=20261007-1" />
+    <link rel="stylesheet" href="assets/style.css?v=20261020-1" />
     <meta property="og:title" content="Ignacio Crespo" />
     <meta
       property="og:description"
@@ -70,6 +70,23 @@
             </div>
             <div class="links">
               <a href="https://ssrn.com/abstract=6463138">SSRN</a>
+              <details class="citation">
+                <summary>BibTeX</summary>
+                <div class="citation-panel">
+                  <button class="citation-copy" type="button">Copy</button>
+                  <pre><code>@techreport{crespo2026fspa,
+  author      = {Crespo, Ignacio},
+  title       = {Superior Predictive Ability in Unstable Environments with an Application to Downside Risk Forecasts},
+  institution = {SSRN},
+  type        = {Working Paper},
+  year        = {2026},
+  month       = {March},
+  number      = {6463138},
+  doi         = {10.2139/ssrn.6463138},
+  url         = {https://ssrn.com/abstract=6463138}
+}</code></pre>
+                </div>
+              </details>
             </div>
             <details class="details">
               <summary>Abstract and details</summary>
@@ -111,6 +128,23 @@
             <div class="links">
               <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7478058">SSRN</a>
               <a href="assets/dspa-isf-2026-slides.pdf">Slides (ISF 2026)</a>
+              <details class="citation">
+                <summary>BibTeX</summary>
+                <div class="citation-panel">
+                  <button class="citation-copy" type="button">Copy</button>
+                  <pre><code>@techreport{crespo2026factor,
+  author      = {Crespo, Ignacio and Brownlees, Christian T. and Fonseca Mendes, Eduardo},
+  title       = {Does Anything Beat a Factor Model? Comparing Predictive Accuracy in Large Panels of Macroeconomic Time Series},
+  institution = {SSRN},
+  type        = {Working Paper},
+  year        = {2026},
+  month       = {September},
+  number      = {7478058},
+  doi         = {10.2139/ssrn.7478058},
+  url         = {https://ssrn.com/abstract=7478058}
+}</code></pre>
+                </div>
+              </details>
             </div>
             <div class="meta coauthors">with Christian Brownlees and Eduardo Fonseca Mendes</div>
             <details class="details">
@@ -144,6 +178,23 @@
             </div>
             <div class="links">
               <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7536058">SSRN</a>
+              <details class="citation">
+                <summary>BibTeX</summary>
+                <div class="citation-panel">
+                  <button class="citation-copy" type="button">Copy</button>
+                  <pre><code>@techreport{crespo2026information,
+  author      = {Crespo, Ignacio and Brownlees, Christian T. and Darolles, Serge and Le Fol, Ga{\"e}lle},
+  title       = {Information Diffusion and Intra-daily Volume Forecasting in Large Panels of Stocks},
+  institution = {SSRN},
+  type        = {Working Paper},
+  year        = {2026},
+  month       = {June},
+  number      = {7536058},
+  doi         = {10.2139/ssrn.7536058},
+  url         = {https://ssrn.com/abstract=7536058}
+}</code></pre>
+                </div>
+              </details>
             </div>
             <div class="meta coauthors">
               with Christian Brownlees, Gaëelle Le Fol and Serge Darolles
@@ -184,13 +235,11 @@
           <div class="pub">
             <div class="pub-head">
               <div class="title">Forecasting Intraday Turnover with Frequency-Based Predictors</div>
-              <div class="badge badge--wip">Available soon</div>
             </div>
           </div>
           <div class="pub">
             <div class="pub-head">
               <div class="title">Monetary Policy Surprises and Downside Growth Risk: International Evidence</div>
-              <div class="badge badge--wip">Available soon</div>
             </div>
             <div class="meta coauthors">with José Nicolás Rosas</div>
           </div>
@@ -272,6 +321,30 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      document.addEventListener("click", async (event) => {
+        const button = event.target.closest(".citation-copy");
+        if (!button) return;
+
+        const citation = button.parentElement.querySelector("code").textContent;
+        const originalLabel = button.textContent;
+
+        try {
+          await navigator.clipboard.writeText(citation);
+        } catch {
+          const textarea = document.createElement("textarea");
+          textarea.value = citation;
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand("copy");
+          textarea.remove();
+        }
+
+        button.textContent = "Copied";
+        setTimeout(() => {
+          button.textContent = originalLabel;
+        }, 1600);
+      });
     </script>
   </body>
 </html>

@@ -171,16 +171,57 @@ main li,
 .pub .meta{color:var(--muted)}
 .pub-head + .meta{margin-top: 2px}
 .pub .meta + .meta{margin-top: 8px}
-.pub .links{margin-top:12px; font-size:13.5px}
-.pub .links a{
-  margin-right:10px;
-  display:inline-block;
+.pub .links{
+  display:flex;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:12px;
+  font-size:13.5px;
+}
+.pub .links a,
+.citation summary{
+  display:block;
   padding: 3px 8px;
   border: 1px solid var(--line);
   border-radius: 999px;
   text-decoration: none;
+  cursor:pointer;
 }
-.pub .links a:hover{background: color-mix(in oklab, var(--bg) 84%, transparent)}
+.pub .links a:hover,
+.citation summary:hover{background: color-mix(in oklab, var(--bg) 84%, transparent)}
+.citation{position:relative}
+.citation summary{list-style:none}
+.citation summary::-webkit-details-marker{display:none}
+.citation-panel{
+  position:absolute;
+  z-index:2;
+  top:calc(100% + 6px);
+  left:0;
+  width:min(620px, calc(100vw - 48px));
+  padding:10px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:var(--bg);
+  box-shadow:0 8px 24px color-mix(in oklab, var(--fg) 18%, transparent);
+}
+.citation-copy{
+  float:right;
+  padding:2px 7px;
+  border:1px solid var(--line);
+  border-radius:5px;
+  background:transparent;
+  color:var(--link);
+  font:inherit;
+  cursor:pointer;
+}
+.citation-panel pre{
+  clear:both;
+  margin:8px 0 0;
+  overflow:auto;
+  font:12px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space:pre;
+}
 .details{margin-top:10px}
 .details summary{cursor:pointer; color: var(--muted)}
 .details[open] summary{margin-bottom: 14px}
